@@ -8,37 +8,6 @@ import {
   Alert
 } from 'react-native'
 
-const Estilo = {
-  estiloImagem: {
-    width: 200,
-    height: 200
-  },
-  imagem:{
-    flex: 1
-  },
-  estiloBotao:{
-    backgroundColor: '#008000',
-    shadowColor:'grey',
-    shadowOpacity: 0.5,
-    shadowRadius: 0.5,
-    shadowOffset: {width:0,height:0.5},
-    borderColor: '#008000',
-    borderRadius: 10,
-    borderWidth: 3,
-  },
-  estiloView:{
-    flex:0.1,
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  estiloTexto: {
-    padding:20,
-    fontSize: 50,
-    color: 'white',
-
-  }
-}
-
 const gerarFrase = function (){
   var numeroAleatorio = Math.random()
   numeroAleatorio = Math.floor(numeroAleatorio*5)
@@ -54,7 +23,7 @@ const App = () => {
   const {estiloImagem, estiloBotao, estiloView, estiloTexto} = Estilo
   return (
     <View style={estiloView}>
-      <Image source={require("./img/logo.png")} style={estiloImagem} />
+      <Image source={require("./img/frases.jpg")}/>
       <TouchableOpacity style={estiloBotao} onPress={gerarFrase}>
         <Text style={estiloTexto}>Gerar Frase</Text>
       </TouchableOpacity>
@@ -63,3 +32,36 @@ const App = () => {
 }
 
 AppRegistry.registerComponent('app2', () => App)
+
+const Estilo = {
+  estiloImagem: {
+    width: 100,
+    height: 100
+  },
+  imagem:{
+    flex: 1
+  },
+  estiloBotao:{
+    backgroundColor: '#0066cc',
+    shadowColor:'grey',
+    shadowOpacity: 5,
+    shadowRadius: 1,
+    shadowOffset: {width:0,height:3},
+    borderColor: '#0066cc',
+    borderRadius: 10,
+    borderWidth: 3,
+  },
+  estiloView:{
+    flex:0.1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+   
+  },
+  estiloTexto: {
+    padding:20,
+    fontSize: 30,
+    color: 'white',
+
+  }
+}
