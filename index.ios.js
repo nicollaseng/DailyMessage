@@ -10,22 +10,37 @@ import {
 
 const Estilo = {
   estiloImagem: {
-    width: 100,
-    height: 100
+    width: 200,
+    height: 200
+  },
+  imagem:{
+    flex: 1
+  },
+  estiloBotao:{
+    backgroundColor: 'white',
+    shadowColor:'grey',
+    shadowOpacity: 0.5,
+    shadowRadius: 0.5,
+    shadowOffset: {width:0,height:0.5}
+  },
+  estiloView:{
+    flex:1,
+    justifyContent: 'space-around',
+    alignItems: 'center'
   }
 }
 
 const gerarFrase = function (){
   var numeroAleatorio = Math.random()
-  numeroAleatorio = Math.floor(numeroAleatorio*5)
-  Alert.alert(numeroAleatorio)
+  numeroAleatorio = Math.floor(numeroAleatorio*10)
+  Alert.alert(`${numeroAleatorio}`)
 }
 const App = () => {
-  const {estiloImagem} = Estilo
+  const {estiloImagem, estiloBotao, estiloView} = Estilo
   return (
-    <View>
+    <View style={estiloView}>
       <Image source={require("./img/logo.png")} style={estiloImagem} />
-      <TouchableOpacity style={} onPress={gerarFrase}>
+      <TouchableOpacity style={estiloBotao} onPress={gerarFrase}>
         <Text>Gerar Frase</Text>
       </TouchableOpacity>
     </View>
